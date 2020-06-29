@@ -15,3 +15,13 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 
+let reviews = [
+  { title: "Great Review", movieTitle: "Batman II" },
+  { title: "Awesome Movies", movieTitle: "Titanic" }
+]
+
+// index
+app.get('/reviews', (req, res) => {
+  res.render('reviews-index', { reviews: reviews })
+})
+
